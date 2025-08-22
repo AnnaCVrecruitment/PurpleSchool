@@ -1,8 +1,8 @@
 'use strict';
 
-// var makeOrdinal = require('./makeOrdinal');
-// var isFinite = require('./isFinite');
-// var isSafeNumber = require('./isSafeNumber');
+let makeOrdinal = require('./makeOrdinal');
+let isFinite = require('./isFinite');
+let isSafeNumber = require('./isSafeNumber');
 
 let TEN:number = 10;
 let ONE_HUNDRED:number = 100;
@@ -53,7 +53,7 @@ function generateWords(number:number):string {
     words: string[] = arguments[1];
 
   // We’re done
-  if (number `===` 0) {
+  if (number === 0) {
     return !words ? 'zero' : words.join(' ').replace(/,$/, '');
   }
   // First run
