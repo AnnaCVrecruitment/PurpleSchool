@@ -48,7 +48,7 @@ function toWords(number: number | string, asOrdinal?: boolean): string {
   return asOrdinal ? makeOrdinal(words) : words;
 }
 
-function generateWords(number: number): string {
+function generateWords(number: number,  words?: string[]): string {
   let remainder: number, word: string,
     words: string[] = arguments[1];
 
