@@ -4,14 +4,14 @@ let makeOrdinal = require('./makeOrdinal');
 let isFinite = require('./isFinite');
 let isSafeNumber = require('./isSafeNumber');
 
-let TEN:number = 10;
-let ONE_HUNDRED:number = 100;
-let ONE_THOUSAND:number = 1000;
-let ONE_MILLION:number = 1000000;
-let ONE_BILLION:number = 1000000000;           //         1.000.000.000 (9)
-let ONE_TRILLION:number = 1000000000000;       //     1.000.000.000.000 (12)
-let ONE_QUADRILLION:number = 1000000000000000; // 1.000.000.000.000.000 (15)
-let MAX:number = 9007199254740992;             // 9.007.199.254.740.992 (15)
+let TEN: number = 10;
+let ONE_HUNDRED: number = 100;
+let ONE_THOUSAND: number = 1000;
+let ONE_MILLION: number = 1000000;
+let ONE_BILLION: number = 1000000000;           //         1.000.000.000 (9)
+let ONE_TRILLION: number = 1000000000000;       //     1.000.000.000.000 (12)
+let ONE_QUADRILLION: number = 1000000000000000; // 1.000.000.000.000.000 (15)
+let MAX: number = 9007199254740992;             // 9.007.199.254.740.992 (15)
 
 let LESS_THAN_TWENTY: string[] = [
   'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
@@ -30,9 +30,9 @@ let TENTHS_LESS_THAN_HUNDRED: string[] = [
  * @param {boolean} [asOrdinal] - Deprecated, use toWordsOrdinal() instead!
  * @returns {string}
  */
-function toWords(number: number|string, asOrdinal?:boolean):string {
+function toWords(number: number | string, asOrdinal?: boolean): string {
   let words: string;
-  let num:number = parseInt(number, 10);
+  let num: number = parseInt(number, 10);
 
   if (!isFinite(num)) {
     throw new TypeError(
@@ -48,9 +48,9 @@ function toWords(number: number|string, asOrdinal?:boolean):string {
   return asOrdinal ? makeOrdinal(words) : words;
 }
 
-function generateWords(number:number, words?: string[]):string {
-  let remainder:number, word:string,
-    words = arguments[1];
+function generateWords(number: number): string {
+  let remainder: number, word: string,
+    words: string[] = arguments[1];
 
   // We’re done
   if (number === 0) {
