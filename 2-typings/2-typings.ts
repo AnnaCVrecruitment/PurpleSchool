@@ -48,9 +48,9 @@ function toWords(number: number|string, asOrdinal?:boolean):string {
   return asOrdinal ? makeOrdinal(words) : words;
 }
 
-function generateWords(number:number):string {
+function generateWords(number:number, words?: string[]):string {
   let remainder:number, word:string,
-    words: any = arguments[1];
+    words = arguments[1];
 
   // We’re done
   if (number === 0) {
